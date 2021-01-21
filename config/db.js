@@ -6,7 +6,7 @@ const options = {
     useFindAndModify: false,
     useUnifiedTopology: true,
     audoIndex: true,
-    dbName: "LoRaDash",
+    dbName: "QRCodes",
     poolSize: 10
 };
 
