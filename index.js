@@ -50,17 +50,17 @@ app.post('/', async (req, res) => {
 
   const code = new Code({
     uid,
-    link :  `https://res.cloudinary.com/darkpanda08/image/upload/v1610381691/${uid}.png`
+    link :  `https://res.cloudinary.com/${process.env.cloud_name}/image/upload/${uid}.png`
   })
   
   try {
     var stream = cloudinary.uploader.upload_stream({ public_id: uid}, (err, result) => { 
       //console.log(result)
     });
-    var file_reader = qr.toFileStream(stream, req.body.text)
+    var file_reader = qr.toFileStream(stream, req.body.text, { scale: 10 })
 
     await code.save()
-    return res.send({ status: "Successful", uid: uid, link: `https://res.cloudinary.com/darkpanda08/image/upload/v1610381691/${uid}.png`})
+    return res.send({ status: "Successful", uid: uid, link: `https://res.cloudinary.com/${process.env.cloud_name}/image/upload/${uid}.png`})
   } catch (err) {
     return res.status(500).send({ status: 'Something Went Wrong' })
   }
