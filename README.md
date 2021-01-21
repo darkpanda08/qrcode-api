@@ -1,4 +1,4 @@
-# QR Code Generator API
+# Quick QR Code API
 
 The API upon recieveing a POST request with the text to be encoded into QR code generates an unique ID and generates the respective QR Code. Then it converts the QR Code into PNG format, renames it with the same as UID and saves on the Cloudinary. It gives back the respnse which consists of the UID and the link for the code. To get the QR Code from the UID we can send a GET request to the API which in response sends the public link of the code image available via CDN. To delete the QR Code from the cloud storage we can send a DELETE request to the API.
 
