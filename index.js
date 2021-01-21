@@ -25,6 +25,9 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
 // Routes
+app.get('/', (req, res) => {
+  return res.status(200).send('Thanks for visting the QR Code API. To use the API read the docs at: https://github.com/darkpanda08/qrcode-api')
+})
 
 // Get QR Code
 app.get('/:uid', async (req, res) => {
