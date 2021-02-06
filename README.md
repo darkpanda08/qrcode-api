@@ -30,6 +30,7 @@ $ npm start
 ```
 
 ## Docker Image
+DockerHub URL: https://hub.docker.com/repository/docker/darkpanda08/qrcode-api
 
 ```
 $ docker pull darkpanda08/qrcode-api
