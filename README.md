@@ -28,3 +28,10 @@ To run production mode...
 ```sh
 $ npm start
 ```
+
+## Docker Image
+
+```
+$ docker pull darkpanda08/qrcode-api
+$ docker run -p 80:5000 -e Mongo_URI=<Mongo_uri> -e cloud_name=<cloudinary_cloud_name> -e api_key=<cloudinary_key> -e api_secret=<cloudinary_api_secret> --name qrcode-api qrcode-api
+```
