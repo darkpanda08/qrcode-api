@@ -8,6 +8,8 @@ jobs:
   build:
     name: Build and Push to Docker Hub
     runs-on: ubuntu-latest
+    env:
+        DOCKER_TAG: $(date +%s)
 
     steps:
     - uses: actions/checkout@v2
@@ -17,6 +19,6 @@ jobs:
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag darkpanda08/qrcode-api:$(date +%s)
+      run: docker build . --file Dockerfile --tag darkpanda08/qrcode-api:$DOCKER_TAG
     - name: Push to Docker Hub
-      run: docker push darkpanda08/qrcode-api
+      run: docker push darkpanda08/qrcode-api:$DOCKER_TAG
