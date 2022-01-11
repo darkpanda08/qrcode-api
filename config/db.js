@@ -3,11 +3,8 @@ const mongoose = require('mongoose')
 // MongoDB Options
 const options = {
     useNewUrlParser: true,
-    useFindAndModify: false,
     useUnifiedTopology: true,
-    audoIndex: true,
-    dbName: "QRCodes",
-    poolSize: 10
+    dbName: "QRCodes"
 };
 
 // Connect to MongoDB
